@@ -2,8 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Web Programming Univ. BSI with
-                Bootstrap SB Admin 2 <?= date('Y'); ?></span>
+            <span>Copyright &copy; Pustaka-Booking with Bootstrap SB Admin 2 <?= date('Y'); ?></span>
         </div>
     </div>
 </footer>
@@ -26,7 +25,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Yakin mau keluar?</h5>
-                <button class="close" type="button" data dismiss="modal" aria-label="Close">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
@@ -38,7 +37,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
@@ -53,7 +51,25 @@
 <script>
     $('.custom-file-input').on('change', function() {
         let fileName = $(this).val().split('\\').pop();
-        $(this).next('.custom-file-label ').addClass("selected").html(fileName);
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
+
+
+    $('.form-check-input').on('click', function() {
+        const menuId = $(this).data('menu');
+        const roleId = $(this).data('role');
+
+        $.ajax({
+            url: "<?= base_url('admin/changeaccess'); ?>",
+            type: 'post',
+            data: {
+                menuId: menuId,
+                roleId: roleId
+            },
+            success: function() {
+                document.location.href = "<?= base_url('admin/akses-role/'); ?>" + roleId;
+            }
+        });
     });
     $(document).ready(function() {
         $("#table-datatable").dataTable();
@@ -62,5 +78,6 @@
 </script>
 
 </body>
+
 
 </html>
