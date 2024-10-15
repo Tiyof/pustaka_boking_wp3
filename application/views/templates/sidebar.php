@@ -13,7 +13,6 @@
     <hr class="sidebar-divider">
 
 
-
     <!-- Looping Menu-->
     <div class="sidebar-heading">
         Home
@@ -24,6 +23,13 @@
         <a class="nav-link pb-0" href="<?= base_url('admin'); ?>">
             <i class="fa fa-fw fa book"></i>
             <span>Dashboard</span></a>
+    <li class="nav-item">
+    <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking'); ?>">
+      <i class="fa fa-fw fa-list"></i>
+      <span>Data Booking</span>
+    </a>
+  </li>   
+
     </li>
     </li>
 

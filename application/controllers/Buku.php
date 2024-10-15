@@ -22,7 +22,7 @@ class Buku extends CI_Controller
             'min_length' => 'Judul buku terlalu pendek'
         ]);
         $this->form_validation->set_rules('id_kategori', 'Kategori', 'required', [
-            'required' => 'Nama pengarang harus diisi',
+            'required' => 'Kategoti harus diisi',
         ]);
         $this->form_validation->set_rules('pengarang', 'Nama Pengarang', 'required|min_length[3]', [
             'required' => 'Nama pengarang harus diisi',
