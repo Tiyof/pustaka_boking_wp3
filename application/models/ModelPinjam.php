@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No Direct Script Access Allowed'); 
+git remote add origin https://github.com/Tiyof/pustaka_boking_wp3.git<?php if (!defined('BASEPATH')) exit('No Direct Script Access Allowed'); 
  
 class ModelPinjam extends CI_Model 
 { 
